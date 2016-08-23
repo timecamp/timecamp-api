@@ -10,7 +10,7 @@ Adding new task
 $ch = curl_init();
 curl_setopt($ch,CURLOPT_URL,'https://www.timecamp.com/third_party/api/tasks/api_token/a36ca9cba82');
 curl_setopt($ch,CURLOPT_POST, 1);
-curl_setopt($ch,CURLOPT_POSTFIELDS, array('name' => 'Task API', 'keywords' => 'keyword 1, keyword 2'));
+curl_setopt($ch,CURLOPT_POSTFIELDS, array('name' => 'Task API', 'tags' => 'tag 1, tag 2'));
  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
  $result = curl_exec($ch);
  curl_close($ch);
