@@ -43,6 +43,35 @@ describe('TimeCampApi', () => {
         }
       }).timeout(10000);
 
+      let project;
+
+      it('can add a new project', async function () {
+        project = { name: 'test' };
+        let response = await tca.syncGateway.projects.create(project);
+        if (!response.ok) {
+          throw response;
+        }
+
+        project._id = response.id;
+        project._rev = response.rev;
+
+      }).timeout(10000);
+
+      let readProject;
+      it('can fetch the new project', async function () {
+        readProject = await tca.syncGateway.projects.read(project._id);
+
+        if (readProject.name !== project.name) {
+          console.log(project);
+          console.log(readProject);
+          throw new Error('Projects missmatch');
+        }
+      }).timeout(10000);
+
+      // it('can get synchronize projects', async function () {
+      //   // project = await tca.syncGateway.newProject('test');
+      // }).timeout(10000);
+
     });
   });
 });
