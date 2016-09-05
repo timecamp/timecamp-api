@@ -33,6 +33,16 @@ describe('TimeCampApi', () => {
         if (apiResponse.error) {
           throw new Error(apiResponse.error.errorMessage);
         }
+        user = apiResponse.data;
+      }).timeout(10000);
+
+      let user;
+      it('can get info about self', async function () {
+        let apiResponse = await tca.userInfo();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        user = apiResponse.data;
       }).timeout(10000);
 
       it('can log in to Sync Gateway', async function () {
@@ -68,8 +78,16 @@ describe('TimeCampApi', () => {
         }
       }).timeout(10000);
 
-      // it('can get synchronize projects', async function () {
-      //   // project = await tca.syncGateway.newProject('test');
+      // it('can get project changes', function (done) {
+      //   project = tca.syncGateway.projects.synchronize(user.id, (change) => {
+      //     console.log(change);
+      //     done();
+      //   }, (stopped) => {
+      //     console.log('stopped');
+      //   }, (error) => {
+      //     console.log(error);
+      //     done(error);
+      //   });
       // }).timeout(10000);
 
     });
