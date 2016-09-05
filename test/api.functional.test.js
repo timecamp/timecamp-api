@@ -26,11 +26,23 @@ describe('TimeCampApi', () => {
       }
     }).timeout(10000);
 
-    it('can log in the new user', async function () {
-      let apiResponse = await tca.authenticate(username, password);
-      if (apiResponse.error) {
-        throw new Error(apiResponse.error.errorMessage);
-      }
-    }).timeout(10000);
+    describe('user', () => {
+
+      it('can log in', async function () {
+        let apiResponse = await tca.authenticate(username, password);
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+      }).timeout(10000);
+
+      it('can log in to Sync Gateway', async function () {
+        await tca.syncGateway.initialize();
+        let apiResponse = await tca.syncGateway.authenticate();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+      }).timeout(10000);
+
+    });
   });
 });
