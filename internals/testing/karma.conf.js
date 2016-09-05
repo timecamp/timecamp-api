@@ -16,6 +16,7 @@ module.exports = (config) => {
     singleRun: true,
 
     client: {
+      captureConsole: true,
       mocha: {
         grep: argv.grep,
       },
