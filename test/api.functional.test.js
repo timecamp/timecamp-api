@@ -52,6 +52,22 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      it('can GET timer', async function () {
+        let apiResponse = await tca.userTimer();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        user = apiResponse.data;
+      }).timeout(10000);
+
+      it('can PATCH timer startTime', async function () {
+        let apiResponse = await tca.updateUserTimer({ startTimer: 232332 });
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        user = apiResponse.data;
+      }).timeout(10000);
+
       it('can PATCH /me name', async function () {
         let apiResponse = await tca.updateUserInfo({ name: "Katy Perry" });
         if (apiResponse.error) {
@@ -60,6 +76,13 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      it('can CREATe new project', async function () {
+        let apiResponse = await tca.projects.create({ name: "Project X", startsOn: 123124, organizationId: '12312' });
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        console.info(apiResponse);
+      }).timeout(10000);
 
     });
   });
