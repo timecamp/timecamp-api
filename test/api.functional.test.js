@@ -35,6 +35,14 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      it('can log in with token', async function () {
+        let apiResponse = await tca.authenticateWithToken(username, password, '99881234', 'Android');
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        user = apiResponse.data;
+      }).timeout(10000);
+
       let user;
       it('can GET info about self', async function () {
         let apiResponse = await tca.userInfo();
