@@ -84,6 +84,14 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      it('can RESET password', async function () {
+        let apiResponse = await tca.resetPassword(username);
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        console.info(apiResponse);
+      }).timeout(10000);      
+
       it('can CREATe new project', async function () {
         let apiResponse = await tca.projects.create({ name: "Project X", startsOn: 123124, organizationId: '12312' });
         if (apiResponse.error) {
