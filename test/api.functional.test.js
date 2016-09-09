@@ -27,6 +27,7 @@ describe('TimeCamp', () => {
     }).timeout(10000);
 
     describe('user', () => {
+      let user;
       it('can log in', async function () {
         let apiResponse = await tca.authenticate(username, password);
         if (apiResponse.error) {
@@ -43,7 +44,6 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
-      let user;
       it('can GET info about self', async function () {
         let apiResponse = await tca.userInfo();
         if (apiResponse.error) {
@@ -52,6 +52,7 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      /*
       it('can GET notifications', async function () {
         let apiResponse = await tca.userNotifications();
         if (apiResponse.error) {
@@ -59,23 +60,33 @@ describe('TimeCamp', () => {
         }
         user = apiResponse.data;
       }).timeout(10000);
+      */
 
       it('can GET timer', async function () {
-        let apiResponse = await tca.userTimer();
+        let apiResponse = await tca.timer.userTimer();
         if (apiResponse.error) {
           throw new Error(apiResponse.error.errorMessage);
         }
-        user = apiResponse.data;
+        //console.log(apiResponse.data);
       }).timeout(10000);
 
-      it('can PATCH timer startTime', async function () {
-        let apiResponse = await tca.updateUserTimer({ startTimer: 232332 });
+      it('can START timer', async function () {
+        let apiResponse = await tca.timer.startTimer();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        } 
+        //console.log(apiResponse.data);
+      }).timeout(10000);
+
+      it('can STOP timer', async function () {
+        let apiResponse = await tca.timer.stopTimer();
         if (apiResponse.error) {
           throw new Error(apiResponse.error.errorMessage);
         }
-        user = apiResponse.data;
+        //console.log(apiResponse.data);
       }).timeout(10000);
 
+      /*
       it('can PATCH /me name', async function () {
         let apiResponse = await tca.updateUserInfo({ name: "Katy Perry" });
         if (apiResponse.error) {
@@ -83,26 +94,48 @@ describe('TimeCamp', () => {
         }
         user = apiResponse.data;
       }).timeout(10000);
+      */
 
       it('can RESET password', async function () {
         let apiResponse = await tca.resetPassword(username);
         if (apiResponse.error) {
           throw new Error(apiResponse.error.errorMessage);
         }
-        console.info(apiResponse);
+        //console.info(apiResponse);
       }).timeout(10000);      
 
+      /*
+      let project;
       it('can CREATe new project', async function () {
         let apiResponse = await tca.projects.create({ name: "Project X", startsOn: 123124, organizationId: '12312' });
         if (apiResponse.error) {
           throw new Error(apiResponse.error.errorMessage);
         }
-        console.info(apiResponse);
+        project = console.info(apiResponse);
       }).timeout(10000);
-
+      console.log(project);
+      /*
+      it('can GET project', async function () {
+        let apiResponse = await tca.projects.getActiveProjects();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        //console.info(apiResponse);
+      }).timeout(10000);
+      */
+      
+      it('can GET all active projects', async function () {
+        let apiResponse = await tca.projects.getActiveProjects();
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        //console.info(apiResponse);
+      }).timeout(10000);
+      
     });
   });
 
+  /*
   describe('SyncGateway', () => {
 
     it('can authenticate', async function () {
@@ -149,4 +182,5 @@ describe('TimeCamp', () => {
       });
     }).timeout(10000);
   })
+  */
 });
