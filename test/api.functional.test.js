@@ -35,6 +35,14 @@ describe('TimeCamp', () => {
         user = apiResponse.data;
       }).timeout(10000);
 
+      it('can log in with token', async function () {
+        let apiResponse = await tca.authenticateWithToken(username, password, '99881234', 'Android');
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        user = apiResponse.data;
+      }).timeout(10000);
+
       let user;
       it('can GET info about self', async function () {
         let apiResponse = await tca.userInfo();
@@ -75,6 +83,14 @@ describe('TimeCamp', () => {
         }
         user = apiResponse.data;
       }).timeout(10000);
+
+      it('can RESET password', async function () {
+        let apiResponse = await tca.resetPassword(username);
+        if (apiResponse.error) {
+          throw new Error(apiResponse.error.errorMessage);
+        }
+        console.info(apiResponse);
+      }).timeout(10000);      
 
       it('can CREATe new project', async function () {
         let apiResponse = await tca.projects.create({ name: "Project X", startsOn: 123124, organizationId: '12312' });
