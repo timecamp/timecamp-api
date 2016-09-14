@@ -33,6 +33,27 @@ Example:
 `https://www.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
 
 
+Sent data formats
+---------------
+
+We accept request data only in PHP form format. Example:
+```bash
+// good way
+id=3621&duration=3600&user_id=123&description=asdf
+    
+// bad way
+{
+  "id":"3621",
+  "duration":"3600",
+  "user_id":"123",
+  "description":""
+}
+```
+
+If you use jQuery.ajax(), then omit JSON.stringify() and use plain JS object as request data value: 
+
+`$.ajax({url:'our/api/endpoint', data: {prop:'val', prop2:'val2}})`.
+
 Handling errors
 ---------------
 
