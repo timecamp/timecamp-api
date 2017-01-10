@@ -17,6 +17,21 @@ curl_close($ch);
 }
 ```
 
+Modifying task
+----------------
+
+```php
+{
+$ch = curl_init();
+curl_setopt($ch,CURLOPT_URL,'https://www.timecamp.com/third_party/api/tasks/api_token/a36ca9cba82');
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query(array('task_id' => 123, 'tags' => 'tags 1, tags 2')));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($ch);
+curl_close($ch);
+}
+```
+
 Getting time entries 
 ----------------
 
