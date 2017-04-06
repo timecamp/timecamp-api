@@ -83,5 +83,6 @@ API ready for use
 Examples
 -----------------
 
+* [PHP Library](https://packagist.org/packages/gisforgirard/timecamp-api) (thanks to [gisforgirard](https://github.com/gisforgirard))
 * [PHP Examples](https://github.com/timecamp2/timecamp-api/blob/master/sections/php-examples.md)
 * [JS Examples](https://github.com/timecamp2/timecamp-api/blob/master/sections/js-examples.md)
