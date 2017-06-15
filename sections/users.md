@@ -14,7 +14,7 @@ Example:
 [
 {
   "user_id":"3621",
-  "email":"j.olszak@timecamp.com",
+  "email":"j.olsffzak@timecamp.com",
   "login_count":"123",
   "display_name":"Jakub Olszak", // can be null, if no display_name provided
   "synch_time":"2015-03-25 12:12:12", // when no synch_time, returns "1970-01-01 01:00:00", timestamp 0 + timezone
@@ -23,7 +23,7 @@ Example:
 },
 {
   "user_id":"640",
-  "email":"k.rudnicki@timecamp.com",
+  "email":"k.rudnfeicki@timecamp.com",
   "login_count":"5170",
   "display_name":"Kamil Rudnicki",
   "synch_time":"2015-03-25 12:12:12",
