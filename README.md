@@ -71,6 +71,7 @@ API ready for use
 -----------------
 
 * [Users](https://github.com/timecamp2/timecamp-api/blob/master/sections/users.md)
+* [Groups](https://github.com/timecamp2/timecamp-api/blob/master/sections/group.md)
 * [Tasks](https://github.com/timecamp2/timecamp-api/blob/master/sections/tasks.md)
 * [Time entries](https://github.com/timecamp2/timecamp-api/blob/master/sections/time-entries.md)
 * [Timer](https://github.com/timecamp2/timecamp-api/blob/master/sections/timer.md)
