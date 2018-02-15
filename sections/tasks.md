@@ -8,6 +8,9 @@ Return all tasks If you want to get only one specific task you can provide a tas
 
 Get Variable Array Fields:
 * (optional) exclude_archived: 1 or 0 (default - we give both archived and not archived tasks)
+* (optional) external_task_id: id (get task by external task id)
+* (optional) task_id: id (get task by task id)
+* empty - return all tasks and projects
 
 Example:
 
