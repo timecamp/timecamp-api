@@ -14,7 +14,7 @@ That's all!
 Authentication
 --------------
 
-Authentication is very simple. You must put your API token in every API request. You can provide API token in POST or GET http method. The name for API token field is: api_token
+Authentication is very simple. You must put your API token in every API request. You can provide API token in POST or GET http method. You can also provide token in HTTP header: `Authorization: <token>`. The name for API token field is: api_token
 Example:
 `https://www.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
 
