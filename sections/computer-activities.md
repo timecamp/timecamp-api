@@ -92,3 +92,45 @@ Post Variable Array Fields:
   * window_title: ‘example window title’ (optional)
   * start_time: ‘2015-03-03 13:33:00’
   * end_time: ‘2015-03-03 13:34:00’
+
+
+PUT /activity
+----------
+
+Modify exist computer activities. Find by end_date and end_time. 
+Modify task_id or/and entry_id, if you don't specify task_id nor entry_id nothing will change.
+
+Example:
+`https://www.timecamp.com/third_party/api/activity/api_token/a36cabi96bba83f826`
+
+```json
+{
+  "user_id": 1311371,
+  "params": [
+    {
+      "end_date": "2018-10-02",
+      "end_time": "2018-10-02 16-10",
+      "task_id": 47331900
+    },
+    {
+      "end_date": "2018-10-02",
+      "end_time": "2018-10-02 16-08",
+      "entry_id": 32410032
+    },
+    {
+      "end_date": "2018-10-02",
+      "end_time": "2018-10-02 16-06",
+      "task_id": 62319747,
+      "entry_id": 5762184
+    }
+  ]
+}
+```
+
+* user_id: int/string (required)
+* params: array (required)
+    * end_date: string (required)
+    * end_time: string (required)
+    * task_id: int/string (optional)
+    * entry_id: int/string (optional)
+    
