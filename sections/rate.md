@@ -10,7 +10,7 @@ Get Variable Array Fields:
 * (optional) rate_id: 136 (if not specified will return values for all rate types)
 * (optional) task_ids: '123, 456, 789' (comma separated)
 * (optional) user_ids: '321, 654, 987' (comma separated)
-* (optional) explicit: 1 (optional, by default 1, 1=true, 3=false, if set to false will return implicit value)
+* (optional) explicit: 1 (optional, by default 1, 1=true, 0=false, if set to false will return implicit value)
 
 _If none of fields are specified will return array with info about rate types_
 

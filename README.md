@@ -14,7 +14,7 @@ That's all!
 Authentication
 --------------
 
-Authentication is very simple. You must put your API token in every API request. You can provide API token in POST or GET http method. The name for API token field is: api_token
+Authentication is very simple. You must put your API token in every API request. You can provide API token in POST or GET http method. You can also provide token in HTTP header: `Authorization: <token>`. The name for API token field is: api_token
 Example:
 `https://www.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
 
@@ -71,6 +71,7 @@ API ready for use
 -----------------
 
 * [Users](https://github.com/timecamp2/timecamp-api/blob/master/sections/users.md)
+* [Groups](https://github.com/timecamp2/timecamp-api/blob/master/sections/group.md)
 * [Tasks](https://github.com/timecamp2/timecamp-api/blob/master/sections/tasks.md)
 * [Time entries](https://github.com/timecamp2/timecamp-api/blob/master/sections/time-entries.md)
 * [Timer](https://github.com/timecamp2/timecamp-api/blob/master/sections/timer.md)
