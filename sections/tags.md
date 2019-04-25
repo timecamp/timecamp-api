@@ -32,6 +32,11 @@ Params (all required):
 * name: "tag name"
 * list: "456" // tag list id
 
+Response (new tag id):
+```json
+123
+```
+
 Put /tag/{id}
 ----------
 
@@ -114,6 +119,11 @@ Example:
 
 Params (all required):
 * name: "tag list name"
+
+Response (new tag list id):
+```json
+456
+```
 
 Put /tag_list/{id}
 ----------
