@@ -40,13 +40,14 @@ Response (new tag id):
 Put /tag/{id}
 ----------
 
-Update tag name.
+Update tag name or archive status.
 
 Example:
 `https://www.timecamp.com/third_party/api/tag/123`
 
-Params (all required):
+Params (at least one is required):
 * name: "new tag name"
+* archived: 1 (0 or 1)
 
 Get /tag_list/
 ----------
@@ -61,11 +62,13 @@ Response:
 [
     {
       "id":"456",
-      "name":"tag list one"
+      "name":"tag list one",
+      "archived":"0"
     },
     {
       "id":"789",
-      "name":"tag list two"
+      "name":"tag list two",
+      "archived":"1"
     }
 ]
 ```
@@ -101,10 +104,12 @@ Response:
     {
         "id":"123",
         "name":"tag one",
+        "archived": 0
     },
     {
         "id":"321",
         "name":"tag two",
+        "archived": 1
     }
 ]
 ```
@@ -133,5 +138,7 @@ Update tag name.
 Example:
 `https://www.timecamp.com/third_party/api/tag_list/123`
 
-Params (all required):
-* name: "new tag list name"
+Params (at least one is required):
+* name: "new tag name"
+* archived: 1 (0 or 1)
+
