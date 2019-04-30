@@ -20,6 +20,32 @@ Response:
 }
 ```
 
+Get /tag/{id}/groups
+----------
+
+Return tag allowed groups in timesheet.
+
+Example:
+`https://www.timecamp.com/third_party/api/tag/123/groups`
+
+Response:
+```json
+{
+  "123":
+  {
+    "id":"123",
+    "name":"Group One / Subgroup / Group 123",
+    "hasSubgroups":"0"
+  },
+  "456":
+  {
+    "id":"456",
+    "name":"Group Two / Subgroup",
+    "hasSubgroups":"1"
+  }
+}
+```
+
 Post /tag/
 ----------
 
@@ -48,6 +74,14 @@ Example:
 Params (at least one is required):
 * name: "new tag name"
 * archived: 1 (0 or 1)
+
+Delete /tag/{tagId}/group/{groupId}
+----------
+
+Delete group from allowed groups list in timesheet for tag.
+
+Example:
+`https://www.timecamp.com/third_party/api/tag/123/group/456`
 
 Get /tag_list/
 ----------
