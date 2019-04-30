@@ -63,6 +63,17 @@ Response (new tag id):
 123
 ```
 
+Post /tag/{id}/group
+----------
+
+Add new group to tag allowed groups list.
+
+Example:
+`https://www.timecamp.com/third_party/api/tag/123/group`
+
+Params (all required):
+* group: "456"
+
 Put /tag/{id}
 ----------
 
