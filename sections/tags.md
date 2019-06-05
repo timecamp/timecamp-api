@@ -149,12 +149,14 @@ Response:
     {
         "id":"123",
         "name":"tag one",
-        "archived": 0
+        "archived": 0,
+        "hasGroupRestrictions": 1
     },
     {
         "id":"321",
         "name":"tag two",
-        "archived": 1
+        "archived": 1,
+        "hasGroupRestrictions": 0
     }
 ]
 ```
