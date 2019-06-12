@@ -97,68 +97,132 @@ Example:
 Get /tag_list/
 ----------
 
-Return all tag lists for user.
+Return all tag lists data for user.
+
+On default tag list does not include tags, get only unarchived tag lists / tags defined in user rootGroup. Data are filtered by checking if tags has group restrictions.
+
+Possible filters (as GET '?' param):
+- archived (0 - not archived [default], 1 - only archived, null - all tag lists / tags)
+- tags (0 - without tags [default], 1 - include tags)
+- use_restrictions (1 - check user group nad tag 'allowed group' restrictions [default], 0 - ignore tag 'allowed groups' restrictions)
+- exclude_empty_tag_lists (1 - exclude tag lists with empty tags, 0 - include empty tag lists) 
+
+Note: Filter 'archived=0' return unarchived tag lists and tags, but 'archived=1' can return unarchived tag list if have archived tag. Beware using 'exclude_empty_tag_lists', because it applies only if 'tags=1'.
 
 Example:
-`https://www.timecamp.com/third_party/api/tag_list`
+`https://www.timecamp.com/third_party/api/tag_list` same as `https://www.timecamp.com/third_party/api/tag_list?tags=0&archived=0&use_restrictions=1`
 
 Response:
 ```json
-[
+{
+  "456": 
     {
       "id":"456",
       "name":"tag list one",
-      "archived":"0"
+      "archived":"0",
+      "tags": {
+          "123": {
+              "id":"123",
+              "name":"tag one",
+              "archived": 0,
+              "hasGroupRestrictions": 1
+          },
+          "321": {
+              "id":"321",
+              "name":"tag two",
+              "archived": 1,
+              "hasGroupRestrictions": 0
+          }
+      }
     },
+  "789": 
     {
       "id":"789",
       "name":"tag list two",
-      "archived":"1"
+      "archived":"1",
+      "tags": {}
     }
-]
+}
 ```
+
+Note: 'tags' key are include only if You use filter 'tags=1'.
 
 Get /tag_list/{id}
 ----------
 
 Return tag list data.
 
+On default tag list data does not include tags, get only unarchived tags defined in user rootGroup. Data are filtered by checking if tags has group restrictions.
+
+Possible filters (as GET '?' param):
+- archived (0 - not archived [default], 1 - only archived, null - all tags)
+- tags (1 - include tags [default], 0 - without tags)
+- use_restrictions (1 - check user group nad tag 'allowed group' restrictions [default], 0 - ignore tag 'allowed groups' restrictions) 
+
+Note: Filter is applies only for tags.
+
 Example:
-`https://www.timecamp.com/third_party/api/tag_list/456`
+`https://www.timecamp.com/third_party/api/tag_list/456` same as `https://www.timecamp.com/third_party/api/tag_list/456?archived=0&tags=1&use_restrictions=1` 
 
 Response:
 ```json
 {
   "id":"456",
   "name":"tag list one",
-  "archived":"0"
+  "archived":"0",
+  "tags": {
+            "123": {
+                "id":"123",
+                "name":"tag one",
+                "archived": 0,
+                "hasGroupRestrictions": 1
+            },
+            "321": {
+                "id":"321",
+                "name":"tag two",
+                "archived": 1,
+                "hasGroupRestrictions": 0
+            }
+        }
 }
 ```
+
+Note: 'tags' key are include only if You use filter 'tags=1'.
 
 Get /tag_list/{id}/tags
 ----------
 
-Return tags from tag list.
+Return tags for tag list.
+
+On default get only unarchived tags defined in user rootGroup. Data are filtered by checking if tags has group restrictions.
+
+Possible filters (as GET '?' param):
+- archived (0 - not archived [default], 1 - only archived, null - all tags)
+- use_restrictions (1 - check user group nad tag 'allowed group' restrictions [default], 0 - ignore tag 'allowed groups' restrictions) 
+
+Note: Filter is applies only for tags.
 
 Example:
-`https://www.timecamp.com/third_party/api/tag_list/456/tags`
+`https://www.timecamp.com/third_party/api/tag_list/456/tags` same as `https://www.timecamp.com/third_party/api/tag_list/456/tags?archived=0&use_restrictions=1`
 
 Response:
 ```json
-[
+{
+  "123": 
     {
         "id":"123",
         "name":"tag one",
         "archived": 0,
         "hasGroupRestrictions": 1
     },
+  "321": 
     {
         "id":"321",
         "name":"tag two",
         "archived": 1,
         "hasGroupRestrictions": 0
     }
-]
+}
 ```
 
 Post /tag_list/
