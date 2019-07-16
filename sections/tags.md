@@ -16,7 +16,8 @@ Response:
   "id":"123",
   "name":"tag name",
   "archived":"0",
-  "tag_list_id":"456"
+  "tagListId":"456",
+  "hasGroupRestrictions": 0
 }
 ```
 
