@@ -290,3 +290,162 @@ Params (at least one is required):
 - "name": "new tag name"
 - "archived": 1 (0 or 1)
 
+
+Get /entries/
+----------
+
+If You want get entries with tags, use already existing endpoint 'entries'. Just add param 'opt_fields=tags'.
+
+Note: if entry has not tags then 'tags' keys does not exists.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/?opt_fields=tags&from=2019-07-31&to=2019-07-31`
+
+Response:
+```json
+[ 
+    {
+        "id": "123456",
+        "...": "...",
+        
+        "tags": [
+            {
+                "tagListName": "Tag list name",
+                "tagListId": "1",
+                "tagId": "123",
+                "name": "Tag name",
+                "mandatory": "0"
+            },
+            {
+                "tagListName": "Tag list name",
+                "tagListId": "1",
+                "tagId": "456",
+                "name": "Tag name two",
+                "mandatory": "1"
+            }
+        ]
+    },
+    {
+          "id": "56789",
+          "...": "...",
+          
+          "tags": [
+              {
+                  "tagListName": "Tag list name",
+                  "tagListId": "1",
+                  "tagId": "123",
+                  "name": "Tag name",
+                  "mandatory": "1"
+              },
+              {
+                  "tagListName": "Tag list name two",
+                  "tagListId": "2",
+                  "tagId": "789",
+                  "name": "Tag name other",
+                  "mandatory": "1"
+              }
+          ]
+      },
+      {
+            "id": "34567",
+            "...": "..."
+      }
+]
+```
+
+Get /entries/{id}/tags
+----------
+
+Get tags for entry.
+
+Note: if entry has not tags then 'tags' keys does not exists.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/123456/tags`
+
+Response:
+```json
+{
+  "123456": [
+    {
+        "tagListName": "Tag list name",
+        "tagListId": "1",
+        "tagId": "123",
+        "name": "Tag name",
+        "mandatory": "0"
+    },
+    {
+        "tagListName": "Tag list name",
+        "tagListId": "1",
+        "tagId": "456",
+        "name": "Tag name two",
+        "mandatory": "1"
+    }
+  ]
+}
+```
+
+Response on empty data:
+```json
+[]
+```
+
+Put /entries/{id}/tags
+----------
+
+Add new tags to entry.
+
+Note: You can add multi tags to entry.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/123456/tags`
+
+Params (required): 
+- "tags": '123' or '123,456,769'
+
+Response (putted tags)
+```json
+[
+ 123, 456, 769
+]
+```
+
+Delete /entries/{id}/tags
+----------
+
+Delete tags from entry.
+
+Note: You can delete multi tags from entry.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/123456/tags`
+
+Params (required): 
+- "tags": '123' or '123,456,769'
+
+Response (deleted tags)
+```json
+[
+ 123, 456, 769
+]
+```
+
+Put /entries/{id}/tag_lists
+----------
+
+Add new tags lists to entry.
+
+Note: You can add multi tag lists to entry.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/123456/tag_lists`
+
+Params (required): 
+- "tagLists": '123' or '123,456,769'
+
+Response (putted tag lists)
+```json
+[
+ 123, 456, 769
+]
+```
