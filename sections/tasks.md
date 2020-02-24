@@ -64,3 +64,15 @@ Put Variable Array Fields:
 * budget_unit: "string" (optional, hours/fee)
 * user_ids: ‘123,563,125’ (optional, comma separated)
 * role: 1 (optional, by default 1, 1=manager, 3=regular user)
+
+
+DELETE /tasks
+----------
+
+Delete task. To delete a task you should have proper permissions.
+
+Example:
+`https://www.timecamp.com/third_party/api/tasks/api_token/a36cabi96bba83f826/task_id/1234`
+
+Delete Variable Array Fields:
+* task_id: 123 (__required__)
