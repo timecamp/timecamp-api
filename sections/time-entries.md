@@ -10,7 +10,6 @@ GET parameters:
 * from - date range of the time entries returned
 * to - date range of the time entries returned
 * task_ids (optional) - tasks ids separated by commas, you can leave it empty, so it will get all tasks
-* with_subtasks = 1 (optional), get entries bound to any task (task_id != "0"), put in the url: with_subtasks/1
 * user_ids (optional) - user ids separated by commas, you can leave it empty, so it will get all users, if there is only one user_id provided and this id is wrong, it will also get all users
 
 
