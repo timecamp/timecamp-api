@@ -1,7 +1,7 @@
 TimeCamp API
 ====================
 
-This is a REST-style API. [TimeCamp](https://www.timecamp.com) API lets you do some basic things with tasks. You can contact us at [dev@timecamp.com](mailto:dev@timecamp.com). We are very open to new ideas and requests regarding API.
+This is a REST-style API. [TimeCamp](https://www.timecamp.com) API lets you do some basic things with tasks. You can contact us at [support@timecamp.com](mailto:support@timecamp.com). We are very open to new ideas and requests regarding API.
 
 
 Making a request
