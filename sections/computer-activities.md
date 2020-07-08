@@ -52,12 +52,12 @@ Example:
 }
 ```
 
-GET /window_title
+POST /window_title
 ----------
 
 Get window titles.
 
-GET parameters:
+POST parameters:
 * window_title_ids: ex: 1,2 (application ids separated by commas)
 
 Example:
