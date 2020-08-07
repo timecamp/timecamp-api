@@ -61,7 +61,13 @@ POST parameters:
 * window_title_ids: ex: 1,2 (application ids separated by commas)
 
 Example:
-`https://www.timecamp.com/third_party/api/window_title/format/json/api_token/a36cabi96bba83f826/window_title_ids/1,2`
+`https://www.timecamp.com/third_party/api/window_title/format/json/api_token/a36cabi96bba83f826/`
+
+Curl example:
+```
+curl -X POST 'https://www.timecamp.com/third_party/api/window_title/format/json/api_token/a36cabi96bba83f826/' \
+  -F "window_title_ids=1,2"
+```
 
 ```json
 {
