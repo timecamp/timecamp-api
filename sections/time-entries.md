@@ -72,6 +72,17 @@ Put Variable Array Fields:
 * task_id: ‘123’ (optional)
 * updateActivities: 1 (optional - 1/0)
 
+DELETE /entries
+----------
+
+Update existing time entry.
+
+Example:
+`https://www.timecamp.com/third_party/api/entries/api_token/a36cabi96bba83f826`
+
+Delete Variable Array Fields:
+* id: 13 (__required__, entry id)
+
 GET /timer_running
 ----------
 
