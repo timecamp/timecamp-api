@@ -80,6 +80,7 @@ API ready for use
 * [Invoices](https://github.com/timecamp2/timecamp-api/blob/master/sections/invoices.md)
 * [Attendance](https://github.com/timecamp2/timecamp-api/blob/master/sections/attendance.md)
 * [Away time from computer](https://github.com/timecamp2/timecamp-api/blob/master/sections/away-time.md)
+* [Approvals](https://github.com/timecamp2/timecamp-api/blob/master/sections/approvals.md)
 
 Examples
 -----------------
