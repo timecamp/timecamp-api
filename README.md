@@ -7,7 +7,7 @@ This is a REST-style API. [TimeCamp](https://www.timecamp.com) API lets you do s
 Making a request
 ----------------
 
-All URLs start with `https://www.timecamp.com/third_party/api`. **SSL only**.
+All URLs start with `https://app.timecamp.com/third_party/api`. **SSL only**.
 That's all!
 
 
@@ -16,9 +16,9 @@ Authentication
 
 Authentication is very simple. You must put your API token in every API request. You can provide API token in POST or GET http method. You can also provide token in HTTP header: `Authorization: <token>`. The name for API token field is: api_token
 Example:
-`https://www.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
+`https://app.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
 
-**To get your API token please go to your [Account Settings](https://www.timecamp.com/people/edit).**
+**To get your API token please go to your [Account Settings](https://app.timecamp.com/people/edit).**
 
 
 Result data formats
@@ -30,7 +30,7 @@ Result data formats
 * other: rawxml, jsonp, serialized, php, html 
 
 Example:
-`https://www.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
+`https://app.timecamp.com/third_party/api/tasks/format/json/api_token/a36cabi96bba83f826`
 
 
 Sent data formats
